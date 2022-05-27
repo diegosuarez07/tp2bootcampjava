@@ -45,9 +45,9 @@ public class AutoresController {
         return gestor.consultarAutores();
     }
 
-    // Para borrar una persona por documento
-    @DeleteMapping("/{doc}")
-    public ResponseEntity borrar(@PathVariable int idAutor) {
+    // Para borrar un autor por id
+    @DeleteMapping("borrar/{id}")
+    public ResponseEntity eliminarAutor(@PathVariable int idAutor) {
         if (gestor.consultarAutor(idAutor) != null) {
             gestor.borrarAutor(idAutor);
             return ResponseEntity.ok().build();
